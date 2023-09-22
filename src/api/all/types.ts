@@ -1,4 +1,6 @@
 // 数据字典接口
+import type { ReqPage } from "@/api/types";
+
 export interface IHomeInfo {
   swiperList: ISwiperListItem[];
   navList: INavListItem[];
@@ -34,7 +36,7 @@ export interface IGoodsDetails {
   desc: string;
   image: string;
 }
-export interface ISearchParams {
+export interface ISearchParams extends ReqPage {
   keyword: string;
   //   排序规则 0:综合排序 1:销量排序 2:价格升序 3:价格降序
   sort: number;
