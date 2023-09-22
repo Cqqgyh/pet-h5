@@ -3,7 +3,7 @@ import { resultSuccess } from "./_utils";
 // mock/user.ts
 
 const mockApiList = [
-  // 获取用户信息
+  // 获取首页信息
   {
     url: "/home",
     method: "get",

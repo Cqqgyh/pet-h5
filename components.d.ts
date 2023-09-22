@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ApartmentCard: typeof import('./src/components/ApartmentCard/ApartmentCard.vue')['default']
+    GoodItem: typeof import('./src/components/GoodItem/GoodItem.vue')['default']
     LoadingButton: typeof import('./src/components/LoadingButton/LoadingButton.vue')['default']
     NavBar: typeof import('./src/components/NavBar/index.vue')['default']
     PullDownRefreshContainer: typeof import('./src/components/PullDownRefreshContainer/PullDownRefreshContainer.vue')['default']
@@ -34,12 +35,15 @@ declare module '@vue/runtime-core' {
     VanNavBar: typeof import('vant/es')['NavBar']
     VanPullRefresh: typeof import('vant/es')['PullRefresh']
     VanRow: typeof import('vant/es')['Row']
+    VanSearch: typeof import('vant/es')['Search']
     VanSkeleton: typeof import('vant/es')['Skeleton']
     VanSticky: typeof import('vant/es')['Sticky']
     VanSwipe: typeof import('vant/es')['Swipe']
     VanSwipeItem: typeof import('vant/es')['SwipeItem']
+    VanTab: typeof import('vant/es')['Tab']
     VanTabbar: typeof import('vant/es')['Tabbar']
     VanTabbarItem: typeof import('vant/es')['TabbarItem']
+    VanTabs: typeof import('vant/es')['Tabs']
     VanTag: typeof import('vant/es')['Tag']
   }
 }

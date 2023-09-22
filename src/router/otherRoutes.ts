@@ -21,6 +21,16 @@ const routes: Array<RouteRecordRaw> = [
       title: "登录",
       noCache: true
     }
+  },
+  {
+    name: "Search",
+    path: "/search",
+    component: () => import("@/views/search/search.vue"),
+    meta: {
+      title: "搜索",
+      icon: "search",
+      noCache: true
+    }
   }
 ];
 

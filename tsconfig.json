@@ -27,8 +27,8 @@
     "skipLibCheck": true,
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
-    "lib": ["ESNext", "DOM"],
+    "baseUrl": ".",
+    "lib": ["ESNext", "DOM","ESNext.Array"],
     "paths": {
       "@/*": ["./src/*"]
     }
