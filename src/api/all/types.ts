@@ -1,13 +1,29 @@
 // 数据字典接口
-export interface DictionaryInterfaceRes {
+export interface IHomeInfo {
+  swiperList: ISwiperListItem[];
+  navList: INavListItem[];
+  advertisement: IAdvertisementItem[];
+  active: IActiveItem[];
+}
+export interface ISwiperListItem {
   id: number;
-  createTime: string;
-  updateTime: string;
-  isDeleted: number;
-  param: object;
-  parentId: number;
-  name: string;
-  value: string;
-  dictCode: string;
-  hasChildren: boolean;
+  imgUrl: string;
+  link: string;
+}
+export interface INavListItem {
+  id: number;
+  imgUrl: string;
+  link: string;
+  title: string;
+  desc: string;
+}
+export interface IAdvertisementItem {
+  id: number;
+  imgUrl: string;
+  link: string;
+}
+export interface IActiveItem {
+  id: number;
+  imgUrl: string;
+  link: string;
 }
