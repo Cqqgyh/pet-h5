@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-[45vw] bg-[--color-background-3] mt-[10px] pl-[15px] pr-[15px] pt-[5px] pb-[5px] flex flex-col justify-center"
+    class="w-[45vw] bg-[--color-background-3] mt-[10px] pl-[15px] pr-[15px] pt-[5px] pb-[5px] flex flex-col justify-center rounded-s"
   >
     <div class="flex flex-col justify-center items-center">
       <img :src="data.image" alt="产品图片" class="w-[35vw] h-[35vw]" />
