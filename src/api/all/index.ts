@@ -1,5 +1,10 @@
 import http from "@/utils/http/indexMock";
-import type { IGoodsDetails, IHomeInfo, ISearchParams } from "@/api/all/types";
+import type {
+  ICategory,
+  IGoodsDetails,
+  IHomeInfo,
+  ISearchParams
+} from "@/api/all/types";
 import type { PageRes } from "@/api/types";
 // import http from "@/utils/http";
 /**
@@ -16,4 +21,10 @@ export function getHomeInfo() {
  */
 export function getSearchInfo(params: ISearchParams) {
   return http.post<PageRes<IGoodsDetails>>(`/search`, params);
+}
+/**
+ * @description 获取商品类比列表
+ */
+export function getCategoryList() {
+  return http.get<ICategory[]>(`/category`);
 }

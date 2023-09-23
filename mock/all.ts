@@ -85,6 +85,29 @@ const mockApiList = [
         })
       );
     }
+  },
+  //   获取商品类别列表
+  {
+    url: "/category",
+    method: "get",
+    response: (request: any) => {
+      const { data } = Mock.mock({
+        "data|15": [
+          {
+            "id|+1": 1,
+            name: "@ctitle(4)",
+            "children|4-8": [
+              {
+                "id|+1": 1,
+                name: "@ctitle(4)",
+                image: "@image(120x200)"
+              }
+            ]
+          }
+        ]
+      });
+      return resultSuccess(data);
+    }
   }
 ];
 export default mockApiList.map(item => {

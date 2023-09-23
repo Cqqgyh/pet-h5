@@ -41,3 +41,9 @@ export interface ISearchParams extends ReqPage {
   //   排序规则 0:综合排序 1:销量排序 2:价格升序 3:价格降序
   sort: number;
 }
+export interface ICategory {
+  id: number;
+  name: string;
+  image?: string;
+  children: ICategory[];
+}

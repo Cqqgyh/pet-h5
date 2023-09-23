@@ -1,3 +1,5 @@
+import router from "@/router";
+
 /**
  * 递归树结构，修改树结构的属性的key
  * @param data 树结构数据
@@ -25,4 +27,8 @@ export function recursionTree(
       recursionTree(item[childrenName], key, value, childrenName, joinPropName);
     }
   });
+}
+// 跳转到其他页面
+export function goToOtherPage(path: string = "/") {
+  router.push(path);
 }
