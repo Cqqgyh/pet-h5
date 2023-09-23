@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     LoadingButton: typeof import('./src/components/LoadingButton/LoadingButton.vue')['default']
     NavBar: typeof import('./src/components/NavBar/index.vue')['default']
     PullDownRefreshContainer: typeof import('./src/components/PullDownRefreshContainer/PullDownRefreshContainer.vue')['default']
+    RefreshContainer: typeof import('./src/components/RefreshContainer/RefreshContainer.vue')['default']
     RoomCard: typeof import('./src/components/RoomCard/RoomCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
