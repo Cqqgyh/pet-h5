@@ -12,9 +12,9 @@
       :key="item.id"
       :title="item.name"
     >
-      <RefreshContaine :onRefresh="getCategoryListHandle">
+      <refresh-container :onRefresh="getCategoryListHandle">
         <comprehensive :category="item"></comprehensive>
-      </RefreshContaine>
+      </refresh-container>
     </van-tab>
   </van-tabs>
   <div class="main-container"></div>
@@ -26,6 +26,7 @@ import { computed, onMounted, ref } from "vue";
 import type { ICategory } from "@/api/all/types";
 import { getCategoryList } from "@/api/all";
 import Comprehensive from "@/views/mall/comprehensive/comprehensive.vue";
+import RefreshContainer from "@/components/RefreshContainer/RefreshContainer.vue";
 // 商品类比
 const categoryList = ref<ICategory[]>([]);
 // 计算滚动像素
