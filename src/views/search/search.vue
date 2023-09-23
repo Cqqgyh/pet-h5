@@ -1,34 +1,37 @@
 <template>
-  <van-search
-    v-model="searchParams.keyword"
-    shape="round"
-    show-action
-    placeholder="请输入搜索关键词"
-  >
-    <template #action>
-      <div @click="onSearchHandle">搜索</div>
-    </template>
-  </van-search>
-  <van-tabs v-model:active="searchParams.sort" @click-tab="clickTabHandle">
-    <van-tab :name="0"> <template #title>综合</template> </van-tab>
-    <van-tab :name="1"> <template #title>销量</template> </van-tab>
-    <van-tab :name="2">
-      <template #title>
-        <div>
-          价格
-          <van-icon :name="'arrow-up'" size="12" />
-        </div>
+  <van-sticky>
+    <van-search
+      v-model="searchParams.keyword"
+      shape="round"
+      show-action
+      placeholder="请输入搜索关键词"
+    >
+      <template #action>
+        <div @click="onSearchHandle">搜索</div>
       </template>
-    </van-tab>
-    <van-tab :name="3">
-      <template #title>
-        <div>
-          价格
-          <van-icon :name="'arrow-down'" size="12" />
-        </div>
-      </template>
-    </van-tab>
-  </van-tabs>
+    </van-search>
+    <van-tabs v-model:active="searchParams.sort" @click-tab="clickTabHandle">
+      <van-tab :name="0"> <template #title>综合</template> </van-tab>
+      <van-tab :name="1"> <template #title>销量</template> </van-tab>
+      <van-tab :name="2">
+        <template #title>
+          <div>
+            价格
+            <van-icon :name="'arrow-up'" size="12" />
+          </div>
+        </template>
+      </van-tab>
+      <van-tab :name="3">
+        <template #title>
+          <div>
+            价格
+            <van-icon :name="'arrow-down'" size="12" />
+          </div>
+        </template>
+      </van-tab>
+    </van-tabs>
+  </van-sticky>
+
   <PullDownRefreshContainer
     :request="getSearchInfoHandle"
     ref="pullDownRefreshContainerRef"
@@ -36,7 +39,11 @@
   >
     <van-row class="pl-[10px]">
       <van-col span="12" v-for="item in [1, 2]" :key="item" @click="() => {}">
-        <GoodItem></GoodItem>
+        <GoodItem
+          v-for="item in goodList"
+          :key="item.id"
+          :data="item"
+        ></GoodItem>
       </van-col>
     </van-row>
   </PullDownRefreshContainer>
@@ -64,6 +71,7 @@ const pullDownRefreshContainerRef =
 // 点击标签
 function clickTabHandle(param: TabProps) {
   searchParams.value.sort = param.name as number;
+  pullDownRefreshContainerRef.value?.onRefresh();
 }
 // 点击搜索
 function onSearchHandle() {
@@ -76,6 +84,7 @@ async function getSearchInfoHandle(pageInfo: ReqPage) {
     ...pageInfo
   });
   if (pageInfo.current === 1) {
+    console.log("data.records", data.records);
     goodList.value = data.records;
   } else {
     goodList.value = [...goodList.value, ...data.records];

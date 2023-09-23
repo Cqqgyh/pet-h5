@@ -3,6 +3,7 @@
   "include": [
     "env.d.ts",
     "src/**/*.ts",
+    "**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "types/*.d.ts",
@@ -24,14 +25,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "noEmit": true,
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "lib": ["ESNext", "DOM","ESNext.Array"],
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["src/*"]
+    },
+    "allowSyntheticDefaultImports": true
   },
 
   "references": [

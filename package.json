@@ -38,6 +38,7 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^17.4.4",
     "@rushstack/eslint-patch": "^1.1.4",
+    "@types/mockjs": "^1.0.7",
     "@types/node": "^18.11.12",
     "@types/nprogress": "^0.2.0",
     "@typescript-eslint/parser": "^5.49.0",
