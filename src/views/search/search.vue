@@ -38,12 +38,13 @@
     class="min-h-[70vh]"
   >
     <van-row class="pl-[10px]">
-      <van-col span="12" v-for="item in [1, 2]" :key="item" @click="() => {}">
-        <GoodItem
-          v-for="item in goodList"
-          :key="item.id"
-          :data="item"
-        ></GoodItem>
+      <van-col
+        span="12"
+        v-for="item in goodList"
+        :key="item.id"
+        @click="() => {}"
+      >
+        <GoodItem :data="item"></GoodItem>
       </van-col>
     </van-row>
   </PullDownRefreshContainer>
