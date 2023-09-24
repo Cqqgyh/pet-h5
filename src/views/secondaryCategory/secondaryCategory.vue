@@ -29,12 +29,11 @@ const recommendGoodsList = ref<IGoodsDetails[]>([]);
 // 获取当前分类页面
 async function getRecommendByCategoryIdHandle() {
   const { data } = await getRecommendByCategoryId(
-    route.query.id as unknown as number
+    route.query.categoryId as unknown as number
   );
   recommendGoodsList.value = data;
 }
 onMounted(() => {
-  console.log("route.query", route.query);
   // 设置页面标题
   document.title = (route.query?.pageTitle as unknown as string) || "推荐";
   getRecommendByCategoryIdHandle();

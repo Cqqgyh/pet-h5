@@ -15,7 +15,7 @@
             @click="
               goToOtherPage({
                 path: '/secondaryCategory',
-                query: { id: item.id, pageTitle: item.name }
+                query: { categoryId: item.id, pageTitle: item.name }
               })
             "
           >
@@ -34,11 +34,11 @@
   </refresh-container>
 </template>
 <script setup lang="ts">
-import type { ICategory, IComprehensive, IGoodsDetails } from "@/api/all/types";
+import type { ICategory, IGoodsDetails } from "@/api/all/types";
 import type { PropType } from "vue";
 import { onMounted, ref } from "vue";
 import GoodItem from "@/components/GoodItem/GoodItem.vue";
-import { getComprehensive, getRecommendByCategoryId } from "@/api/all";
+import { getRecommendByCategoryId } from "@/api/all";
 import RefreshContainer from "@/components/RefreshContainer/RefreshContainer.vue";
 import { goToOtherPage } from "@/utils";
 
