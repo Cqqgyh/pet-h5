@@ -27,7 +27,14 @@
     </van-cell-group>
     <div class="main-container flex justify-center mt-[150px]">
       <!--      退出登录-->
-      <van-button type="primary" class="w-[50vw]" @click="logoutHandle"
+      <van-button
+        v-if="!userStore.userInfo?.avatarUrl"
+        type="primary"
+        class="w-[50vw]"
+        @click="goToOtherPage('/login')"
+        >登录</van-button
+      >
+      <van-button v-else type="primary" class="w-[50vw]" @click="logoutHandle"
         >退出登录</van-button
       >
     </div>
@@ -39,6 +46,7 @@ import { showImagePreview } from "vant";
 import defaultAvatarUrl from "@/assets/logo.png";
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
+import { goToOtherPage } from "@/utils";
 const router = useRouter();
 console.log("router.currentRoute.value.path", router);
 const navList = ref([

@@ -1,4 +1,5 @@
-import http from "@/utils/http";
+import http from "@/utils/http/indexMock";
+// import http from "@/utils/http";
 import type {
   loginQueryInterface,
   SmsCodeQueryInterface,
@@ -10,7 +11,7 @@ import type {
  * @param params
  */
 export function login(params: loginQueryInterface) {
-  return http.post<string>(`/app/login`, params);
+  return http.post<string>(`/login`, params);
 }
 
 /**
@@ -18,12 +19,12 @@ export function login(params: loginQueryInterface) {
  * @param params
  */
 export function getSmsCode(params: SmsCodeQueryInterface) {
-  return http.get(`/app/login/getCode`, params);
+  return http.get(`/login/getCode`, params);
 }
 
 /**
  * @description 获取用户信息
  */
 export function getUserInfo() {
-  return http.get<UserInfoInterface>(`/app/info`);
+  return http.get<UserInfoInterface>(`/userInfo`);
 }

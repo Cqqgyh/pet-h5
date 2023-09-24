@@ -276,6 +276,39 @@ const mockApiList = [
         })
       );
     }
+  },
+  // 登录
+  {
+    url: "/login",
+    method: "post",
+    response: (request: any) => {
+      return resultSuccess(
+        "tokentotokentokentokentokentokentokentokentokenken"
+      );
+    }
+  },
+  // 获取验证码
+  {
+    url: "/login/getCode",
+    method: "get",
+    response: (request: any) => {
+      return resultSuccess("验证码已发送");
+    }
+  },
+  // 获取用户信息
+  {
+    url: "/userInfo",
+    method: "get",
+    response: (request: any) => {
+      return resultSuccess(
+        Mock.mock({
+          // 头像
+          avatarUrl: "@image(200x200)",
+          // 用户名
+          nickname: "@ctitle(2, 6)"
+        })
+      );
+    }
   }
 ];
 export default mockApiList.map(item => {

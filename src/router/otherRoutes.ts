@@ -76,6 +76,15 @@ const routes: Array<RouteRecordRaw> = [
       title: "商品详情",
       noCache: true
     }
+  },
+  {
+    name: "Login",
+    path: "/login",
+    component: () => import("@/views/login/login.vue"),
+    meta: {
+      title: "登录",
+      noCache: true
+    }
   }
 ];
 
