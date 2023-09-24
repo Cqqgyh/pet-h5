@@ -38,6 +38,8 @@ export interface IGoodsDetails {
 }
 export interface ISearchParams extends ReqPage {
   keyword: string;
+  // 商品分类id
+  categoryId: string | number | null;
   //   排序规则 0:综合排序 1:销量排序 2:价格升序 3:价格降序
   sort: number;
 }

@@ -55,15 +55,19 @@ import { computed, ref } from "vue";
 import PullDownRefreshContainer from "@/components/PullDownRefreshContainer/PullDownRefreshContainer.vue";
 import type { TabProps } from "vant";
 import GoodItem from "@/components/GoodItem/GoodItem.vue";
-import bathImg from "@/assets/images/bath.png";
 import { getSearchInfo } from "@/api/all";
 import type { IGoodsDetails } from "@/api/all/types";
 import type { ReqPage } from "@/api/types";
+import { useRoute } from "vue-router";
+const route = useRoute();
 // 商品列表
 const goodList = ref<IGoodsDetails[]>([]);
 // 搜索参数
 const searchParams = ref({
   keyword: "",
+  categoryId: (route.query.categoryId as string)
+    ? +(route.query.categoryId as unknown as string)
+    : null,
   //   排序规则 0:综合排序 1:销量排序 2:价格升序 3:价格降序
   sort: 0
 });
