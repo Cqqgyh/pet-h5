@@ -1,5 +1,5 @@
 <template>
-  <van-card class="rounded-xl shadow" :tag="data.tag">
+  <van-card class="rounded-xl shadow" :tag="data.tag || ''">
     <!--      title-->
     <template #title>
       <slot name="title">
