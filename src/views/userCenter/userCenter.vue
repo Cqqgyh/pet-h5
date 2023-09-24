@@ -8,7 +8,7 @@
         round
         width="30vw"
         height="30vw"
-        :src="userStore.userInfo?.avatarUrl || defaultAvatarUrl"
+        :src="userStore.userInfo?.avatarUrl || 'http://dummyimage.com/900x900'"
       >
         <template v-slot:error>加载失败</template>
       </van-image>
