@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ApartmentCard: typeof import('./src/components/ApartmentCard/ApartmentCard.vue')['default']
     GoodItem: typeof import('./src/components/GoodItem/GoodItem.vue')['default']
+    GoodItemBar: typeof import('./src/components/GoodItemBar/GoodItemBar.vue')['default']
     LoadingButton: typeof import('./src/components/LoadingButton/LoadingButton.vue')['default']
     NavBar: typeof import('./src/components/NavBar/index.vue')['default']
     PullDownRefreshContainer: typeof import('./src/components/PullDownRefreshContainer/PullDownRefreshContainer.vue')['default']
@@ -30,6 +31,8 @@ declare module '@vue/runtime-core' {
     VanEmpty: typeof import('vant/es')['Empty']
     VanField: typeof import('vant/es')['Field']
     VanForm: typeof import('vant/es')['Form']
+    VanGrid: typeof import('vant/es')['Grid']
+    VanGridItem: typeof import('vant/es')['GridItem']
     VanIcon: typeof import('vant/es')['Icon']
     VanImage: typeof import('vant/es')['Image']
     VanLoading: typeof import('vant/es')['Loading']

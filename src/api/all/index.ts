@@ -36,3 +36,11 @@ export function getCategoryList() {
 export function getComprehensive() {
   return http.get<IComprehensive>(`/comprehensive`);
 }
+
+/**
+ * @description 根据分类id获取推荐商品
+ * @param id
+ */
+export function getRecommendByCategoryId(id: number) {
+  return http.get<IGoodsDetails[]>(`/recommend/${id}`);
+}
