@@ -16,17 +16,15 @@
         {{ userStore.userInfo?.nickname || "测试" }}
       </div>
     </div>
-    <div class="main-container flex justify-around mt-[30px]">
-      <div
+    <van-cell-group>
+      <van-cell
         v-for="item in navList"
         :key="item.path"
-        class="flex flex-col justify-center items-center"
-        @click="router.push(item.path)"
-      >
-        <SvgIcon :name="item.icon" size="50" />
-        <span>{{ item.name }}</span>
-      </div>
-    </div>
+        :title="item.name"
+        is-link
+        :to="item.path"
+      />
+    </van-cell-group>
     <div class="main-container flex justify-center mt-[150px]">
       <!--      退出登录-->
       <van-button type="primary" class="w-[50vw]" @click="logoutHandle"
@@ -45,19 +43,24 @@ const router = useRouter();
 console.log("router.currentRoute.value.path", router);
 const navList = ref([
   {
-    icon: "历史",
-    name: "浏览历史",
-    path: "/browsingHistory"
+    icon: "",
+    name: "测试导航1",
+    path: "/"
   },
   {
-    icon: "预约",
-    name: "我的预约",
-    path: "/myAppointment"
+    icon: "",
+    name: "测试导航2",
+    path: "/"
   },
   {
-    icon: "合同",
-    name: "我的租约",
-    path: "/myAgreement"
+    icon: "",
+    name: "测试导航3",
+    path: ""
+  },
+  {
+    icon: "",
+    name: "测试导航4",
+    path: ""
   }
 ]);
 const userStore = useUserStore();
@@ -69,7 +72,7 @@ const logoutHandle = () => {
 };
 console.log(userStore);
 onMounted(() => {
-  userStore.GetInfoAction();
+  // userStore.GetInfoAction();
 });
 </script>
 
