@@ -5,6 +5,7 @@
     :placeholder="true"
     :route="true"
     fixed
+    ref="tabbarRef"
   >
     <van-tabbar-item
       v-for="(item, index) in tabBarData"
@@ -18,9 +19,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, watch, onMounted } from "vue";
 import tabBarRoutes from "@/router/tabBarRoutes";
 import { useRoute } from "vue-router";
+import { useApp } from "@/store/modules/useApp";
+
 const route = useRoute();
 console.log(route);
 const active = ref(0);
@@ -81,5 +84,14 @@ const tabBarData = computed(() => {
 });
 const isShowTabBar = computed(() => {
   return tabBarRoutes.some(item => item.path === route.path);
+});
+
+const tabbarRef = ref();
+watch(tabbarRef, () => {
+  setTimeout(() => {
+    useApp().setBottomTabBarInfo({
+      height: tabbarRef.value?.$el.clientHeight || 0
+    });
+  }, 10);
 });
 </script>
