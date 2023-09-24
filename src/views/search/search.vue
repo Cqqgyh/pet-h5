@@ -1,7 +1,7 @@
 <template>
   <van-sticky>
     <van-search
-      v-model="searchParams.keyword"
+      v-model.trim="searchParams.keyword"
       shape="round"
       show-action
       placeholder="请输入搜索关键词"
