@@ -29,7 +29,7 @@ service.interceptors.request.use(
     }
     const token = getToken();
     if (token) {
-      config.headers.token = token || "demoToken";
+      config.headers.token = token;
     }
     return config;
   },
