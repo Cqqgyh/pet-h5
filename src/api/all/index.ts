@@ -1,4 +1,5 @@
 import http from "@/utils/http/indexMock";
+// import http from "@/utils/http";
 import type {
   ICategory,
   IComprehensive,
@@ -8,7 +9,6 @@ import type {
   IServiceCategory
 } from "@/api/all/types";
 import type { PageRes } from "@/api/types";
-// import http from "@/utils/http";
 /**
  * @description 获取数据字典接口
  * @param params
