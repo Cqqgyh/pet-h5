@@ -31,6 +31,16 @@ const routes: Array<RouteRecordRaw> = [
       icon: "search",
       noCache: true
     }
+  },
+  {
+    name: "SecondaryCategory",
+    path: "/secondaryCategory",
+    component: () => import("@/views/secondaryCategory/secondaryCategory.vue"),
+    meta: {
+      title: "推荐",
+      icon: "search",
+      noCache: true
+    }
   }
 ];
 
