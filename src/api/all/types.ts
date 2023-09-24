@@ -35,6 +35,11 @@ export interface IGoodsDetails {
   title: string;
   desc: string;
   image: string;
+  imageList?: {
+    id: number;
+    name: string;
+    imgUrl: string;
+  };
 }
 export interface ISearchParams extends ReqPage {
   keyword: string;

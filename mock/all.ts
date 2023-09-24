@@ -253,6 +253,29 @@ const mockApiList = [
       });
       return resultSuccess(data);
     }
+  },
+  //  根据商品id获取商品详情
+  {
+    url: "/goodsDetail/:id",
+    method: "get",
+    response: (request: any) => {
+      return resultSuccess(
+        Mock.mock({
+          id: +request.query?.id || 1,
+          price: "@integer(60, 100)",
+          title: "@ctitle(5, 10)",
+          desc: "@ctitle(10, 100)",
+          image: "@image(200x200)",
+          "imageList|2-6": [
+            {
+              "id|+1": 1,
+              name: "@ctitle(5, 10)",
+              imgUrl: "@image(1000x1200)"
+            }
+          ]
+        })
+      );
+    }
   }
 ];
 export default mockApiList.map(item => {

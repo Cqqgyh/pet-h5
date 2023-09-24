@@ -67,6 +67,15 @@ const routes: Array<RouteRecordRaw> = [
       title: "分类",
       noCache: true
     }
+  },
+  {
+    name: "GoodsDetail",
+    path: "/goodsDetail",
+    component: () => import("@/views/goodsDetail/goodsDetail.vue"),
+    meta: {
+      title: "商品详情",
+      noCache: true
+    }
   }
 ];
 

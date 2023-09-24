@@ -4,7 +4,8 @@ import type {
   IComprehensive,
   IGoodsDetails,
   IHomeInfo,
-  ISearchParams, IServiceCategory
+  ISearchParams,
+  IServiceCategory
 } from "@/api/all/types";
 import type { PageRes } from "@/api/types";
 // import http from "@/utils/http";
@@ -63,4 +64,12 @@ export function getGoodsRankingList() {
  */
 export function getServiceList() {
   return http.get<IServiceCategory[]>(`/serviceList`);
+}
+
+/**
+ * @description 根据商品id获取商品详情
+ * @param id
+ */
+export function getGoodsDetailById(id: number) {
+  return http.get<IGoodsDetails>(`/goodsDetail/${id}`);
 }
