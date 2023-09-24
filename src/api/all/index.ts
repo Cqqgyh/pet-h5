@@ -4,7 +4,7 @@ import type {
   IComprehensive,
   IGoodsDetails,
   IHomeInfo,
-  ISearchParams
+  ISearchParams, IServiceCategory
 } from "@/api/all/types";
 import type { PageRes } from "@/api/types";
 // import http from "@/utils/http";
@@ -57,4 +57,10 @@ export function getSeckillList() {
  */
 export function getGoodsRankingList() {
   return http.get<IGoodsDetails[]>(`/goodsRanking`);
+}
+/**
+ * @description 获取服务页面种类列表
+ */
+export function getServiceList() {
+  return http.get<IServiceCategory[]>(`/serviceList`);
 }

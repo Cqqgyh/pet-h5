@@ -227,6 +227,32 @@ const mockApiList = [
       });
       return resultSuccess(data);
     }
+  },
+  //  获取服务页面种类列表
+  {
+    url: "/serviceList",
+    method: "get",
+    response: (request: any) => {
+      const { data } = Mock.mock({
+        "data|15": [
+          {
+            "id|+1": 1,
+            name: "@ctitle(4)",
+            image: "@image(120x200)",
+            "children|4-8": [
+              {
+                "id|+1": 1,
+                price: "@integer(60, 100)",
+                title: "@ctitle(5, 10)",
+                desc: "@ctitle(10, 20)",
+                image: "@image(200x200)"
+              }
+            ]
+          }
+        ]
+      });
+      return resultSuccess(data);
+    }
   }
 ];
 export default mockApiList.map(item => {

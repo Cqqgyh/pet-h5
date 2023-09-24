@@ -60,3 +60,16 @@ export interface IActive {
   left: IActiveItem[];
   right: IActiveItem[];
 }
+export interface IServiceCategory {
+  id: number;
+  name: string;
+  image?: string;
+  children: IServiceDetails[];
+}
+export interface IServiceDetails {
+  id: number;
+  price: number;
+  title: string;
+  desc: string;
+  image: string;
+}
