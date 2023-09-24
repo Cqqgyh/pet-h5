@@ -1,5 +1,6 @@
 <template>
   <div
+    @click="goToOtherPage({ path: '/goodsDetail', query: { id: data.id } })"
     class="w-[45vw] bg-[--color-background-3] mt-[10px] pl-[15px] pr-[15px] pt-[5px] pb-[5px] flex flex-col justify-center rounded-s"
   >
     <div class="flex flex-col justify-center items-center">
@@ -18,8 +19,9 @@
 <script setup lang="ts">
 import type { IGoodsDetails } from "@/api/all/types";
 import type { PropType } from "vue";
+import { goToOtherPage } from "@/utils";
 
-const props = defineProps({
+defineProps({
   data: {
     type: Object as PropType<IGoodsDetails>,
     default: () => ({}),

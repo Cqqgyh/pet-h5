@@ -1,5 +1,9 @@
 <template>
-  <van-card class="rounded-xl shadow" :tag="data.tag || ''">
+  <van-card
+    @click="goToOtherPage({ path: '/goodsDetail', query: { id: data.id } })"
+    class="rounded-xl shadow"
+    :tag="data.tag || ''"
+  >
     <!--      title-->
     <template #title>
       <slot name="title">
@@ -42,7 +46,8 @@
 <script setup lang="ts">
 import type { IGoodsDetails } from "@/api/all/types";
 import type { PropType } from "vue";
-const props = defineProps({
+import { goToOtherPage } from "@/utils";
+defineProps({
   data: {
     type: Object as PropType<IGoodsDetails & { tag?: string }>,
     default: () => ({}),
