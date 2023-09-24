@@ -12,6 +12,12 @@
           <van-grid-item
             v-for="item in category.children.slice(0, 4)"
             :key="item"
+            @click="
+              goToOtherPage({
+                path: '/secondaryCategory',
+                query: { id: item.id, pageTitle: item.name }
+              })
+            "
           >
             <van-image class="w-[30px] h-[60px]" :src="item.image" />
             <span>{{ item.name }}</span>
@@ -34,6 +40,7 @@ import { onMounted, ref } from "vue";
 import GoodItem from "@/components/GoodItem/GoodItem.vue";
 import { getComprehensive, getRecommendByCategoryId } from "@/api/all";
 import RefreshContainer from "@/components/RefreshContainer/RefreshContainer.vue";
+import { goToOtherPage } from "@/utils";
 
 const props = defineProps({
   category: {

@@ -5,7 +5,7 @@
       class="flex justify-center items-center bg-[--van-primary-color] py-[10px]"
     >
       <div class="flex justify-center items-center">
-        <div class="text-[16px] font-bold">{{ pageTitle }}</div>
+        <div class="text-[16px] font-bold">{{ route.query.pageTitle }}</div>
       </div>
     </div>
   </van-sticky>
@@ -22,28 +22,21 @@ import type { IGoodsDetails } from "@/api/all/types";
 import { onMounted, ref } from "vue";
 import { getRecommendByCategoryId } from "@/api/all";
 import GoodItemBar from "@/components/GoodItemBar/GoodItemBar.vue";
-
-const props = defineProps({
-  id: {
-    type: Number,
-    readOnly: true
-  },
-  pageTitle: {
-    type: String,
-    default: "推荐"
-  }
-});
-
+import { useRoute } from "vue-router";
+const route = useRoute();
 // 页面数据
 const recommendGoodsList = ref<IGoodsDetails[]>([]);
 // 获取当前分类页面
 async function getRecommendByCategoryIdHandle() {
-  const { data } = await getRecommendByCategoryId(props.id as number);
+  const { data } = await getRecommendByCategoryId(
+    route.query.id as unknown as number
+  );
   recommendGoodsList.value = data;
 }
 onMounted(() => {
+  console.log("route.query", route.query);
   // 设置页面标题
-  document.title = props.pageTitle;
+  document.title = (route.query?.pageTitle as unknown as string) || "推荐";
   getRecommendByCategoryIdHandle();
 });
 </script>

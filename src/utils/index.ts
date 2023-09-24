@@ -1,4 +1,5 @@
 import router from "@/router";
+import type { RouteLocationRaw } from "vue-router";
 
 /**
  * 递归树结构，修改树结构的属性的key
@@ -29,6 +30,6 @@ export function recursionTree(
   });
 }
 // 跳转到其他页面
-export function goToOtherPage(path: string = "/") {
+export function goToOtherPage(path: string | RouteLocationRaw = "/") {
   router.push(path);
 }
