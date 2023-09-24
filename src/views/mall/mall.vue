@@ -46,7 +46,6 @@ const categoryList = shallowRef<
 // 计算滚动像素
 const stickyRef = ref();
 const stickyRefHeight = computed(() => {
-  console.log("stickyRefHeight--------------------");
   return stickyRef.value?.$el.clientHeight || 0;
 });
 // 计算分类定位与大小
@@ -66,7 +65,6 @@ watch(stickyRefHeight, () => {
 
 // 获取商品类比列表
 async function getCategoryListHandle() {
-  console.log("1");
   const { data } = await getCategoryList();
 
   categoryList.value = [
