@@ -19,7 +19,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/home/home.vue"),
     meta: {
       title: "首页",
-      icon: "search"
+      icon: "home-o"
     }
   },
   {
@@ -28,7 +28,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/mall/mall.vue"),
     meta: {
       title: "商城",
-      icon: "star-o"
+      icon: "shopping-cart-o"
     }
   },
   {
@@ -37,7 +37,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/service/service.vue"),
     meta: {
       title: "服务",
-      icon: "home-o"
+      icon: "shop-o"
     }
   },
   {
