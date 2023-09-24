@@ -44,3 +44,17 @@ export function getComprehensive() {
 export function getRecommendByCategoryId(id: number) {
   return http.get<IGoodsDetails[]>(`/recommend/${id}`);
 }
+
+/**
+ * @description 获取秒杀商品列表
+ */
+export function getSeckillList() {
+  return http.get<IGoodsDetails[]>(`/seckill`);
+}
+
+/**
+ * @description 获取商品排行列表
+ */
+export function getGoodsRankingList() {
+  return http.get<IGoodsDetails[]>(`/goodsRanking`);
+}

@@ -170,8 +170,47 @@ const mockApiList = [
       );
     }
   },
+  //  根据分类id获取推荐商品列表
   {
     url: "/recommend/:id",
+    method: "get",
+    response: (request: any) => {
+      const { data } = Mock.mock({
+        "data|4-10": [
+          {
+            "id|+1": 1,
+            price: "@integer(60, 100)",
+            title: "@ctitle(5, 10)",
+            desc: "@ctitle(10, 20)",
+            image: "@image(200x200)"
+          }
+        ]
+      });
+      return resultSuccess(data);
+    }
+  },
+  //  获取秒杀商品列表
+  {
+    url: "/seckill",
+    method: "get",
+    response: (request: any) => {
+      const { data } = Mock.mock({
+        "data|4-10": [
+          {
+            "id|+1": 1,
+            price: "@integer(60, 100)",
+            title: "@ctitle(5, 10)",
+            desc: "@ctitle(10, 20)",
+            image: "@image(200x200)"
+          }
+        ]
+      });
+      return resultSuccess(data);
+    }
+  },
+  //  获取排行榜商品列表
+  {
+    url: "/goodsRanking",
     method: "get",
     response: (request: any) => {
       const { data } = Mock.mock({

@@ -19,7 +19,12 @@
             <!--        标题-->
             <div class="flex flex-row justify-between items-center w-[40vw]">
               <div class="text-[14px] font-bold">秒杀</div>
-              <div class="text-[12px]">更多</div>
+              <div
+                class="text-[12px]"
+                @click="goToOtherPage('/goodsSeckillList')"
+              >
+                更多
+              </div>
             </div>
             <!--        秒杀内容-->
             <div class="flex flex-row justify-between items-center mt-[10px]">
@@ -41,7 +46,9 @@
             <!--        标题-->
             <div class="flex flex-row justify-between items-center w-[40vw]">
               <div class="text-[14px] font-bold">排行榜</div>
-              <div class="text-[12px]">更多</div>
+              <div class="text-[12px]" @click="goToOtherPage('/goodsRankList')">
+                更多
+              </div>
             </div>
             <!--        秒杀内容-->
             <div class="flex flex-row justify-between items-center mt-[10px]">
@@ -103,6 +110,7 @@ import { onMounted, ref } from "vue";
 import GoodItem from "@/components/GoodItem/GoodItem.vue";
 import { getComprehensive } from "@/api/all";
 import RefreshContainer from "@/components/RefreshContainer/RefreshContainer.vue";
+import { goToOtherPage } from "@/utils";
 
 const props = defineProps({
   category: {

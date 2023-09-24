@@ -1,5 +1,5 @@
 <template>
-  <van-card class="rounded-xl shadow">
+  <van-card class="rounded-xl shadow" :tag="data.tag">
     <!--      title-->
     <template #title>
       <slot name="title">
@@ -37,17 +37,14 @@
         </van-image>
       </slot>
     </template>
-    <!--    tags-->
-    <template #tags> </template>
   </van-card>
 </template>
 <script setup lang="ts">
 import type { IGoodsDetails } from "@/api/all/types";
 import type { PropType } from "vue";
-
 const props = defineProps({
   data: {
-    type: Object as PropType<IGoodsDetails>,
+    type: Object as PropType<IGoodsDetails & { tag?: string }>,
     default: () => ({}),
     readOnly: true
   }

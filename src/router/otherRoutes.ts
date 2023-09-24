@@ -38,7 +38,24 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/secondaryCategory/secondaryCategory.vue"),
     meta: {
       title: "推荐",
-      icon: "search",
+      noCache: true
+    }
+  },
+  {
+    name: "GoodsSeckillList",
+    path: "/goodsSeckillList",
+    component: () => import("@/views/goodsSeckillList/goodsSeckillList.vue"),
+    meta: {
+      title: "秒杀",
+      noCache: true
+    }
+  },
+  {
+    name: "GoodsRankList",
+    path: "/goodsRankList",
+    component: () => import("@/views/goodsRankList/goodsRankList.vue"),
+    meta: {
+      title: "排行榜",
       noCache: true
     }
   }
