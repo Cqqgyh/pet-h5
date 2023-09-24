@@ -1,10 +1,6 @@
 <template>
   <van-sticky ref="stickyRef">
-    <van-search
-      @click="goToOtherPage('/search')"
-      shape="round"
-      placeholder="请输入搜索关键词"
-    />
+    <SearchBar></SearchBar>
   </van-sticky>
   <van-tabs
     v-model:active="activeTab"
@@ -15,21 +11,18 @@
   >
     <van-tab v-for="item in categoryList" :key="item.id" :title="item.name">
       <component :is="item.component" :category="item"></component>
-      <!--      <comprehensive :category="item"></comprehensive>-->
-      <!--      <category-item-page :category="item"></category-item-page>-->
     </van-tab>
   </van-tabs>
   <div class="main-container"></div>
 </template>
 
 <script setup lang="ts" name="Mall">
-import { goToOtherPage } from "@/utils";
 import { computed, onMounted, ref, shallowRef } from "vue";
 import type { ICategory } from "@/api/all/types";
 import { getCategoryList } from "@/api/all";
 import Comprehensive from "@/views/mall/comprehensive/comprehensive.vue";
-import RefreshContainer from "@/components/RefreshContainer/RefreshContainer.vue";
 import CategoryItemPage from "@/views/mall/categoryItemPage/categoryItemPage.vue";
+import SearchBar from "@/components/SearchBar/SearchBar.vue";
 // 活动的tab
 const activeTab = ref(0);
 // 商品类比
