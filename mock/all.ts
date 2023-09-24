@@ -96,6 +96,7 @@ const mockApiList = [
           {
             "id|+1": 1,
             name: "@ctitle(4)",
+            image: "@image(120x200)",
             "children|4-8": [
               {
                 "id|+1": 1,

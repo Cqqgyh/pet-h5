@@ -58,6 +58,15 @@ const routes: Array<RouteRecordRaw> = [
       title: "排行榜",
       noCache: true
     }
+  },
+  {
+    name: "Category",
+    path: "/category",
+    component: () => import("@/views/category/category.vue"),
+    meta: {
+      title: "分类",
+      noCache: true
+    }
   }
 ];
 
