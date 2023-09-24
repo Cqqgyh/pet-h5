@@ -1,6 +1,6 @@
 <template>
   <refresh-container :onRefresh="getRecommendByCategoryIdHandle">
-    <van-skeleton title avatar :row="10" :loading="!recommend.length">
+    <van-skeleton title avatar :row="10" :loading="!image.length">
       <div class="main-container">
         <!--    小分类-->
         <van-grid
@@ -19,7 +19,7 @@
         </van-grid>
         <!--   推荐商品区域-->
         <van-row class="mb-[20px] ml-[5px]" justify="space-between">
-          <van-col span="12" v-for="item in recommend" :key="item.id">
+          <van-col span="12" v-for="item in image" :key="item.id">
             <GoodItem :data="item"></GoodItem>
           </van-col>
         </van-row>
@@ -43,11 +43,11 @@ const props = defineProps({
   }
 });
 // 页面数据
-const recommend = ref<IGoodsDetails[]>([]);
+const image = ref<IGoodsDetails[]>([]);
 // 获取当前分类页面
 async function getRecommendByCategoryIdHandle() {
   const { data } = await getRecommendByCategoryId(props.category?.id);
-  recommend.value = data;
+  image.value = data;
 }
 onMounted(() => {
   getRecommendByCategoryIdHandle();
