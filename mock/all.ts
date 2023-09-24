@@ -108,6 +108,67 @@ const mockApiList = [
       });
       return resultSuccess(data);
     }
+  },
+  //   获取综合页面
+  {
+    url: "/comprehensive",
+    method: "get",
+    response: (request: any) => {
+      return resultSuccess(
+        Mock.mock({
+          advertisement: [
+            {
+              "id|+1": 1,
+              link: "",
+              imgUrl: "@image(2000x900)"
+            }
+          ],
+          "seckill|2": [
+            {
+              "id|+1": 1,
+              price: "@integer(60, 100)",
+              title: "@ctitle(5, 10)",
+              desc: "@ctitle(10, 20)",
+              image: "@image(200x200)"
+            }
+          ],
+          "rank|2": [
+            {
+              "id|+1": 1,
+              price: "@integer(60, 100)",
+              title: "@ctitle(5, 10)",
+              desc: "@ctitle(10, 20)",
+              image: "@image(200x200)"
+            }
+          ],
+          "active|2": {
+            left: [
+              {
+                "id|+1": 1,
+                link: "",
+                imgUrl: "@image(200x200)"
+              }
+            ],
+            "right|2": [
+              {
+                "id|+1": 1,
+                link: "",
+                imgUrl: "@image(170x80)"
+              }
+            ]
+          },
+          "recommend|10": [
+            {
+              "id|+1": 1,
+              price: "@integer(60, 100)",
+              title: "@ctitle(5, 10)",
+              desc: "@ctitle(10, 20)",
+              image: "@image(200x200)"
+            }
+          ]
+        })
+      );
+    }
   }
 ];
 export default mockApiList.map(item => {

@@ -1,6 +1,7 @@
 import http from "@/utils/http/indexMock";
 import type {
   ICategory,
+  IComprehensive,
   IGoodsDetails,
   IHomeInfo,
   ISearchParams
@@ -27,4 +28,11 @@ export function getSearchInfo(params: ISearchParams) {
  */
 export function getCategoryList() {
   return http.get<ICategory[]>(`/category`);
+}
+
+/**
+ * @description 获取综合页面
+ */
+export function getComprehensive() {
+  return http.get<IComprehensive>(`/comprehensive`);
 }

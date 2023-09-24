@@ -47,3 +47,14 @@ export interface ICategory {
   image?: string;
   children: ICategory[];
 }
+export interface IComprehensive {
+  advertisement: IAdvertisementItem[];
+  seckill: IGoodsDetails[];
+  rank: IGoodsDetails[];
+  active: IActive;
+  recommend: IGoodsDetails[];
+}
+export interface IActive {
+  left: IActiveItem[];
+  right: IActiveItem[];
+}
