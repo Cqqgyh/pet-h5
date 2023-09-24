@@ -1,25 +1,6 @@
 # 文档地址
-## 前台：http://139.198.127.41:8081/doc.html
-## 后台：http://139.198.127.41:8080/doc.html
-
-<div align="center">
-	<img src="src/assets/logo_melomini.png" alt="logo_melomini" style="width:20%;" />
-</div>
-
-<div align="center">
-	<a href="https://github.com/yulimchen/vue3-h5-template/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/yulimchen/vue3-h5-template.svg?style=flat-square" alt="license">
-  </a>
-  <a href="https://github.com/yulimchen/vue3-h5-template/releases">
-    <img src="https://img.shields.io/github/release/yulimchen/vue3-h5-template.svg?style=flat-square" alt="GitHub release">
-  </a>
-  <a href="https://github.com/yulimchen/vue3-h5-template">
-    <img src="https://img.shields.io/github/stars/yulimchen/vue3-h5-template?style=flat-square" alt="GitHub stars">
-  </a>
-  <a href="https://github.com/yulimchen/vue3-h5-template">
-    <img src="https://img.shields.io/github/forks/yulimchen/vue3-h5-template?style=flat-square" alt="GitHub forks">
-  </a>
-</div>
+## 前台：
+## 后台：
 
 
 <h1 align="center">Vue3 h5 template</h1>
@@ -43,32 +24,11 @@
 - [x] 开发环境调试面板
 - [ ] TODO: 生产环境 CDN 依赖
 
-
-
-## 在线预览Preview
-
-👓 [点击这里](https://yulimchen.github.io/vue3-h5-template/)（PC浏览器请切换手机端模式）
-
-
-
-
-## 截图
-
-![](docs/assets/img/Snipaste_2023-05-04_21-52-10.png)
-
-
-
 ## 运行项目
 
 注意：要求 Node 版本 16+，可使用 [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) 进行本地 Node 版本管理，同时建议使用 [pnpm](https://pnpm.io/zh/installation) 包管理器。
 
 ```shell
-# 克隆项目
-git clone https://github.com/yulimchen/vue3-h5-template.git
-
-# 进入项目目录
-cd vue3-h5-template
-
 # 安装依赖
 pnpm install
 
@@ -78,19 +38,6 @@ pnpm dev
 
 如果你需要的是基于 `vue-cli(webpack)` 或者 `JavaScript` 构建的 H5 项目模板，可切换到 [vue-cli](https://github.com/yulimchen/vue3-h5-template/tree/vue-cli) 分支进行开发
 
-```shell
-# 克隆项目
-git clone -b vue-cli https://github.com/yulimchen/vue3-h5-template.git
-
-# 进入项目目录
-cd vue3-h5-template
-
-# 安装依赖
-yarn
-
-# 启动服务
-yarn serve
-```
 
 
 
@@ -204,7 +151,7 @@ router.beforeEach((to: toRouteType, from, next) => {
 
 ### - <span id="mock">开发环境 Mock</span>
 
-> 本项目开发环境支持 mock 请求数据，在 `mock` 目录中可配置接口和数据，具体见[文档](https://github.com/pengzhanbo/vite-plugin-mock-dev-server/blob/main/README.zh-CN.md)。
+> 本项目开发环境支持 mock 请求数据，在 `mock` 目录中可配置接口和数据，具体见[文档](https://github.com/vbenjs/vite-plugin-mock/blob/main/README.zh_CN.md)。
 
 
 
@@ -275,22 +222,3 @@ feat(layout): 布局完成
 **❗ PS.为避免打包后出现不可预估问题，请注意确保生产和开发环境的依赖版本一致！**
 
 > 如需关闭 CDN 依赖，在根目录生产环境变量文件 `.env.production` 中修改 `VUE_APP_CDN_DEPS` 的值为 `false` ，重新打包即可。
-
-
-
-
-## 鸣谢
-
- [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin) 
-
- [vant-demo](https://github.com/youzan/vant-demo) 
-
- [vue-pure-admin](https://github.com/xiaoxian521/vue-pure-admin)
-
- [vue-vben-admin](https://github.com/vbenjs/vue-vben-admin)
-
-
-
-## License
-
-[MIT license](https://github.com/yulimchen/vue3-h5-template/blob/master/LICENSE).
